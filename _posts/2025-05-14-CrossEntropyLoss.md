@@ -4,7 +4,7 @@ For the multiclassification problem on identifying pet breeds, cross entropy los
 
 By reading the ![Fastai course](https://github.com/lovellbrian/fastbook/blob/master/05_pet_breeds.ipynb), I've learned that cross entropy loss is composed of two components:
 - A softmax activation function;
-- and computing the log liklihood.
+- and computing the negative log liklihood.
 
 ## Softmax
 Softmax is available as a python function:
@@ -15,4 +15,11 @@ Softmax is similar to sigmoid in that it can bound the activation for a class be
 
 ## Log Liklihood
 Log liklihood is also available as a python function:
+```python
+nll_loss
+```
+However, this function does not acutally compute the log: instead, you need to take the ```log``` of the input prior to parsing it into the function or use ```log_softmax```. The effect of taking the negative log liklihood of the softmax activation value is that the resulting loss of the true class is very large if it is close to zero and low if it is close to one. This penalizes the model heavily for making strong incorrect predictions.
 
+![](\Capture9.JPG)
+
+By taking the mean of the negative log likelihood, the cross entropy loss is calculated. Cross entropy loss is also available as the python function ```nn.CrossEntropyLoss```. Another useful property of cross entropy loss is that its gradient is linear, resulting in a smoother gradient descent and training loop.
