@@ -1,4 +1,4 @@
-# This is the title
+# Cleaning Data
 
 Here's the table of contents:
 
@@ -7,7 +7,9 @@ Here's the table of contents:
 
 ## Basic setup
 
-Jekyll requires blog post files to be named according to the following format:
+I was doing my elec4630 assignment and recently came across the issue of my model for question 4 being too inaccurate.
+
+
 
 `YEAR-MONTH-DAY-filename.md`
 
@@ -17,7 +19,7 @@ The first line of the file should start with a single hash character, then a spa
 
 ## Basic formatting
 
-You can use *italics*, **bold**, `code font text`, and create [links](https://www.markdownguide.org/cheat-sheet/). Here's a footnote [^1]. Here's a horizontal rule:
+You can use *italics*, **bold**, `code font text`, and create . Here's a footnote [^1]. Here's a horizontal rule:
 
 ---
 
