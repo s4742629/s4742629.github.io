@@ -9,7 +9,7 @@ Here's the table of contents:
 
 I was doing my elec4630 assignment and recently came across the issue of my model for question 4 being too inaccurate.
 
-
+![](Capture.JPG)
 
 `YEAR-MONTH-DAY-filename.md`
 
