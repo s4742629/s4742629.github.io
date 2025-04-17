@@ -11,6 +11,11 @@ I was doing my elec4630 assignment and recently came across the issue of my mode
 
 ![](/Capture.JPG)
 
+There are too many mislabelled entries in the confusion matrix. Also, the t-SNE plot looks like a starfish and is very sparse for all the classes. Since I'm scraping images off of the internet, these inaccuracies are probably from the data itself. So, this is going to a post talking about **data cleaning**, based on the lecture content from the lecture 10a slides.
+
+I started off with trying to pop up all the high loss entries from the dataloader using this code I took from the lectures:
+> `interp.plot_top_losses(10)`
+
 `YEAR-MONTH-DAY-filename.md`
 
 Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `filename` is whatever file name you choose, to remind yourself what this post is about. `.md` is the file extension for markdown files.
