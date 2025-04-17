@@ -13,7 +13,7 @@ I started off with trying to pop up all the high loss entries from the dataloade
 interp.plot_top_losses(10)
 ```
 
-![](/Capture.JPG)
+![](/Capture4.JPG)
 
 So, there're a bunch of mislabelleed entries here. The one that stands out the most is the image of the **sun** labelled as a *dog*. I'm pretty sure this is a result of this line of code `download_images(dest, urls=search_images(f'{o} sun photo'))` which attempted to grab sunny variants of the image class but winded up getting an actual image of the sun itself. There's also a whole bunch of wierd images, like the black snail image in the corner.
 
@@ -23,7 +23,7 @@ According to lecture 10a, its possible to open up a data cleaner by writing:
 cleaner = ImageClassifierCleaner(learn)
 cleaner
 ```
-![](/Capture3.JPG)
+![](/Capture5.JPG)
 
 In using this GUI, I can set which images I want to relabel and which other one's I want to remove from the system entirely. When I'm finished specifying which images to delete, I can run:
 
@@ -35,6 +35,8 @@ for idx, cat in cleaner.change():
 ```
 
 To apply my changes in the GUI to the dataset. Seems simple enough, but the problem is that there's so many bad images. One the most common bad images I've seen are these car screens with cats and dogs in them which keep messing up the model.
+
+![](/Capture2.JPG)
 
 Also, I'm going to change the image scraper to `download_images(dest, urls=search_images(f'{o} sunny photo'))` to make sure I don't get pictures of the sun.
 
