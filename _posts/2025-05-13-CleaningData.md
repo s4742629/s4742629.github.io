@@ -14,7 +14,22 @@ I was doing my elec4630 assignment and recently came across the issue of my mode
 There are too many mislabelled entries in the confusion matrix. Also, the t-SNE plot looks like a starfish and is very sparse for all the classes. Since I'm scraping images off of the internet, these inaccuracies are probably from the data itself. So, this is going to a post talking about **data cleaning**, based on the lecture content from the lecture 10a slides.
 
 I started off with trying to pop up all the high loss entries from the dataloader using this code I took from the lectures:
-> `interp.plot_top_losses(10)`
+```python
+interp.plot_top_losses(10)
+```
+Were pretty wierd.
+
+![](/Capture.JPG)
+
+So there's a bunch of wierd stuff here. The one that stands out the most is the image of the **sun** labelled as a *dog*. I'm pretty sure this is a result of this line of code `download_images(dest, urls=search_images(f'{o} sunny photo'))` which attempted to grab sunny variants of the image class but winded up getting an actual image of the sun itself. There's also a whole bunch of wierd images, like the black snail image in the corner.
+
+According to lecture 10a, its possible to open up a data cleaner by writing:
+
+```python
+cleaner = ImageClassifierCleaner(learn)
+cleaner
+```
+![](/Capture3.JPG)
 
 `YEAR-MONTH-DAY-filename.md`
 
