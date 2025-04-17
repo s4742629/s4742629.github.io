@@ -14,7 +14,7 @@ The confusion matrix is a useful tool for visualising the performance of a model
 learn.recorder.plot_loss()
 ````
 
-![](/Capture6.JPG)
+![](/Capture10.JPG)
 
 By plotting training and validation loss of the model over time, we can determine whether the number of epochs that the model is trained for is sufficient or not. Ideally, the number of epochs the model is trained for should be great enough so that the training loss fully declines before slowing and planteauing. At this point, the decrease in training loss has diminished as the model begins to over fit. Additionally, during this time, the validation loss will fluctuate, sometimes rising. Despite this, the accuracy of model should continue to improve so long as the model doesn't become too over fit and begins incorrectly memorizing training data. Generally, training the model for more epochs will result in better accuracy but the main cost associated will be time.
 
@@ -24,7 +24,7 @@ learn = vision_learner(dls, resnet34, metrics=error_rate)
 learn.fine_tune(1, base_lr=0.1)
 ```
 
-![](/Capture6.JPG)
+![](/Capture111.JPG)
 
 To optimise the learning rate, we can construct a learning rate finder. Beginning at a very low learning rate, we can progressively increase the learning rate and observe the change in loss, watching loss decrease before the learning rate becoomes too high and loss spikes. From the resulting graph we can select a learning rate for our model between the centre of the slope and the minima, decreasing the loss as much as possible without letting the learning rate become too high.
 
@@ -33,7 +33,7 @@ The notebook also discusses the concept of freezing network layers wherein a pre
 
 ### Discriminative Learning Rates
 
-![](/Capture6.JPG)
+![](/Capture12.JPG)
 
 Employing discriminative learning rates is another method by which performance can be improved wherein the learning rate is varied across the layers of the network. Since earlier layers in a network focus on training basic shapes while later layers focus on more complex structures, varying the learning rate can prove advantageous as it allows more basic layers to train faster while providin enough finess for more complex layers.
 
